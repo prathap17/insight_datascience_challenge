@@ -30,6 +30,9 @@ def drugs_name(sep_data):
             then check the last but one element in the seperated 
             data. If the element is a number then append it 
             with the element from the thrid last for drug name
+            
+            Example : Panc 5,00 this would be split into
+            Panc 5 and 00 . So we append them both together
 
             """
 
@@ -39,9 +42,8 @@ def drugs_name(sep_data):
         except ValueError as e:
             """ 
             
-            There are some drugs name followed by a number.
-            eg: "Panc 5,000". For these split them with "
-            and append the value to name 
+            For Drugs name followed by value eg: "Panc 5,000". 
+            For these split them with " and append the value to name 
             
             """
             sep_value = sep_data[-2].split("\"")
