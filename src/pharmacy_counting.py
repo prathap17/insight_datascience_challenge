@@ -82,7 +82,7 @@ with open(parameter1, 'r') as data:
 # sorting the data by cost
 sorted_data = sorted(dictlist.items(), key=lambda e: e[1][1], reverse=True)
 
-out_file = open(parameter2, 'wt',encoding='UTF-8') #outputfile
+out_file = open(parameter2, 'w') #outputfile
 out_file.write("drug_name,num_prescriber,total_cost\n") #header 
 
 # addind data the output file
