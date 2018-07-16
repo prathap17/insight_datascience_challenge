@@ -63,7 +63,7 @@ f = open( var2, 'w')
 f.write ("drug_name,num_prescriber,total_cost\n")
 
 for item in sorted_data:
-    line=( item[0]+','+str(len(item[1][0]))+','+ str(item[1][1]) +'\n')
+    line=( item[0]+','+str(len(item[1][0]))+','+ str(int(item[1][1])) +'\n')
     
     f.write(line)
 f.close()
