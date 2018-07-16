@@ -11,13 +11,11 @@ The original dataset was obtained from the Centers for Medicare & Medicaid Servi
 # Approach
 My approach for this problem is as :
 
-#Drugs Dictionary:
-
+Drugs Dictionary:
 Created a dictionary of unique drugs as the keys from the text file.
 
-#Values:
-Created a set of unique unique users who took the drug.
-Adding the cost of drug.
+Values for Drugs:
+Created a set of unique users who took the drug and the total cost of the drug.
 
 
 
