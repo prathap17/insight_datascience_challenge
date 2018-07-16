@@ -19,35 +19,46 @@ dictlist = {}
 def drugs_name(sep_data):
 
     # check if the size of the elements are five or not
-    global drug_name
+    global drug_name_
 
     if(len(sep_data) > 5):
 
         try:
             """ 
 
-            if the size of elements more than five
-                check the value of the second last 
-                element from the elements array.If the element 
-                is a number then append it with the element
-                from the thrid last for drug name
+            If the size of comma seperated data more than five
+            then check the last but one element in the seperated 
+            data. If the element is a number then append it 
+            with the element from the thrid last for drug name
 
             """
 
             if(isinstance(float(sep_data[-2]), float)):
-                drug_name = sep_data[-3] + ',' + sep_data[-2]
+                drug_name_ = sep_data[-3] + ',' + sep_data[-2]
 
         except ValueError as e:
+            """ 
+            
+            There are some drugs name followed by a number.
+            eg: "Panc 5,000". For these split them with "
+            and append the value to name 
+            
+            """
             sep_value = sep_data[-2].split("\"")
             if(len(sep_value) > 1):
                 d_n = sep_data[-3].split("\"")
-                drug_name = d_n[1] + ',' + sep_value[0]
+                drug_name_ = d_n[1] + ',' + sep_value[0]
+            else :
+                drug_name_ = sep_data[-2]  # drug name
+            
+            pass
+                
 
     # elements size is 5 or less
     else:
-        drug_name = sep_data[-2]  # drug name
+        drug_name_ = sep_data[-2]  # drug name
 
-    return drug_name
+    return drug_name_
 
 
 def drug_insertion(dictlist, elements, drug_name):
