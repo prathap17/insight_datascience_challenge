@@ -1,4 +1,4 @@
-# insight_datascience_challenge
+# Insight Data Science Challenge
 Challenge for Insight Data Science
 
 # Problem
